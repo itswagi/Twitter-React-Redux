@@ -1,0 +1,40 @@
+body{
+    background-color: #163D57;
+    color: #163D57;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+.post {
+    width: 25rem;
+    background-color: #FBDBC1;
+    padding: 1.125rem;
+    border-radius: 2%;
+}
+
+.postHeader {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+    border-style: none none solid none;
+    border-width: 0.1rem;
+}
+
+.postBody {
+    text-align: left;
+}
+h2, h3 {
+    padding-right: 1rem;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
