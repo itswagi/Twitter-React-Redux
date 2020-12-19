@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets/search/recent?query=pakistan&user.fields=name,username&expansions=author_id&tweet.fields=created_at', {
+    const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets/search/recent?query=formula1&user.fields=name,username&expansions=author_id&tweet.fields=created_at', {
         headers: {
             'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`
         }
