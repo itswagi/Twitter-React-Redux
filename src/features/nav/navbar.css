@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.signInButton {
+    background: url(./sign-in.png) no-repeat;
+    cursor: pointer;
+    width: 10rem;
+    height: 100%;
+    object-fit: cover;
+
+}
