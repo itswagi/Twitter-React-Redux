@@ -1,9 +1,10 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import './postsList.css'
+import {selectAllPosts} from './postsSlice'
 
 export const PostsList = () => {
-    const posts = useSelector(state => state.posts)
+    const posts = useSelector(selectAllPosts)
 
     const renderedPosts = posts.map(post => (
         <div className="post" key={post.id}>

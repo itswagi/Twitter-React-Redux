@@ -1,15 +1,27 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import axios from 'axios'
 
-const initialState = [
-    {name: 'Wajahat', id: 'itswagi', timestamp: '7m', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-    {name: 'Raeed', id: 'itsraeed', timestamp: '8m', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '},
-    {name: 'Kazmi', id: 'itskazmi', timestamp: '9m', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
-]
+const initialState = {
+    posts: [],
+    status: 'idle',
+    error: null
+}
 
 const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {}
+})
+
+export const selectAllPosts = state => state.posts.posts
+
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+    const response = await axios.get('https://api.twitter.com/2/tweets/search/recent?query=pakistan&user.fields=name,username&expansions=author_id&tweet.fields=created_at', {
+        headers: {
+            'Authorization': `Bearer ${process.env.REACT_APP_TOKEN}`
+        }
+    })
+    return response
 })
 
 export default postsSlice.reducer
