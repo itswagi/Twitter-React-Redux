@@ -54,8 +54,6 @@ export const PostsList = () => {
         renderedPosts = <div>{error}</div>
     }
 
-    
-
     return (
         <SkeletonTheme color="#FDF1E7" highlightColor="#ADD2EB">
             <div className="postsList">

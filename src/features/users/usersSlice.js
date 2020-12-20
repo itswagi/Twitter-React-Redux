@@ -25,10 +25,13 @@ export const signInUser = createAsyncThunk('users/signInUser', async () => {
             'origin': 'http://localhost:3000/'
         }
     }
-
-    response = await axios(config)
     
-    console.log(response)
+    response = await axios(config)
+    console.log(window.location.href)
+    const popup = window.open('', '_blank', 'width: 580px, height:690px')
+    popup.document.write(response.data)
+    popup.close()
+    console.log('1')
     return response.data
 })
 
